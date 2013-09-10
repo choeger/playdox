@@ -1,0 +1,9 @@
+@(path: scalax.file.Path)
+
+@import scalax.file.PathMatcher._
+
+@main("PlayDox") {
+  <h1>@path.toAbsolute.toString</h1>
+
+  @{for(p <- path.children()) yield <p>{p.name}</p>}
+}
